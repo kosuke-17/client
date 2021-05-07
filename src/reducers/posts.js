@@ -3,7 +3,7 @@ export default (posts = [], action)=> {
     case 'FETCH_ALL':
       return action.payload;
     case 'CREATE':
-      return posts;
+      return [...posts.concat, action.payload];
     default:
       return posts;
   }
