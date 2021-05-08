@@ -1,15 +1,15 @@
+
 import * as api from '../api';
 
-// ACtion Creators
 export const getPosts = () => async (dispatch) => {
-  try{
+  try {
       const { data } = await api.fetchPosts();
 
       dispatch({ type: 'FETCH_ALL', payload: data });
   } catch (error) {
       console.log(error.message);
   }
-}
+};
 
 export const createPost = (post) => async (dispatch) => {
   try {
@@ -19,4 +19,4 @@ export const createPost = (post) => async (dispatch) => {
   } catch (error) {
     console.log(error);
   }
-}
+};
