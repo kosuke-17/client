@@ -21,13 +21,15 @@ const Form = ({ currentId, setCurentId }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-  if(cuttentId) {
-    dispatch(updatePost(currentId, postData));
-  } else{
-    dispatch(createPost(postData));
-  };
+    if(cuttentId) {
+      dispatch(updatePost(currentId, postData));
+    } else{
+      dispatch(createPost(postData));
+    }
+    clear();
+  }
   const clear = () => {
-
+    setCurentId(null);
   };
 
   return (
